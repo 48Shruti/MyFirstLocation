@@ -1,5 +1,6 @@
 package com.shruti.myfirstproject
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -11,6 +12,7 @@ class MainActivity : AppCompatActivity() {
     var etcollegeinfo : EditText ?= null
     var etphone : EditText ?= null
     var btnvalidate : Button ?= null
+    var btnnext : Button ?= null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         etcollegeinfo = findViewById(R.id.etcollegeinfo)
         etphone = findViewById(R.id.etphone)
         btnvalidate = findViewById(R.id.btnvalidate)
+        btnnext = findViewById(R.id.btnnext)
       btnvalidate?.setOnClickListener {
           if (etname?.text.isNullOrEmpty())
           {
@@ -34,6 +37,11 @@ class MainActivity : AppCompatActivity() {
               Toast.makeText(this, "Successful", Toast.LENGTH_SHORT).show()
           }
       }
+        btnnext?.setOnClickListener {
+            var intent = Intent(this , CheckboxRadioActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
     }
 
