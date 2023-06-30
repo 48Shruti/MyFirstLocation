@@ -21,61 +21,77 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Project"
-    android:textSize="30sp"
-    android:textStyle="bold"
-    android:gravity="center"
-    android:layout_marginStart="20dp"
-    android:textColor="#093C3A"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Project"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginStart="20dp"
+        android:textColor="#093C3A"/>
 
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Enter your name"
-    android:textSize="20sp"
-    android:layout_marginTop="60dp"
-    android:layout_marginLeft="10dp"
-    android:textColor="#093C3A"/>
-<EditText
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="Enter your name"
-    android:layout_marginLeft="10dp"/>
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Enter something about your college"
-    android:textSize="20sp"
-    android:layout_marginLeft="10dp"
-    android:textColor="#093C3A"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter your name"
+        android:textSize="20sp"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="#093C3A"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your name"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/etname"
+        android:inputType="textCapWords"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter something about your college"
+        android:textSize="20sp"
+        android:layout_marginLeft="10dp"
+        android:textColor="#093C3A"/>
+
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"/>
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Enter your phone number"
-    android:textSize="20sp"
-    android:layout_marginLeft="10dp"
-    android:textColor="#093C3A"/>
-<EditText
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginLeft="10dp"
-    android:inputType="number"/>
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:hint="About your college "
+        android:minLines="5"
+        android:inputType="textCapWords"
+        android:id="@+id/etcollegeinfo"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter your phone number"
+        android:textSize="20sp"
+        android:layout_marginLeft="10dp"
+        android:textColor="#093C3A"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:inputType="number"
+        android:id="@+id/etphone"
+        android:maxLength="10"
+        android:hint="Example :1234567890"
 
-<Button
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Validate"
-    android:textSize="20sp"
-    android:gravity="center"
-    android:layout_marginTop="30sp"
-   android:backgroundTint="@color/cardview_dark_background"/>
+        />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Validate"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="30sp"
+       android:backgroundTint="@color/cardview_dark_background"
+        android:id="@+id/btnvalidate"/>
+       id
 </LinearLayout>
