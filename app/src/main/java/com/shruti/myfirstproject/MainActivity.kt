@@ -9,7 +9,8 @@ import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
     var etname : EditText?= null
-    var etcollegeinfo : EditText ?= null
+    var etper : EditText ?= null
+    var etmar : EditText ?= null
     var etphone : EditText ?= null
     var btnvalidate : Button ?= null
     var btnnext : Button ?= null
@@ -17,7 +18,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         etname = findViewById(R.id.etname)
-        etcollegeinfo = findViewById(R.id.etcollegeinfo)
+        etper = findViewById(R.id.etper)
+        etmar = findViewById(R.id.etmar)
         etphone = findViewById(R.id.etphone)
         btnvalidate = findViewById(R.id.btnvalidate)
         btnnext = findViewById(R.id.btnnext)
@@ -25,9 +27,9 @@ class MainActivity : AppCompatActivity() {
           if (etname?.text.isNullOrEmpty())
           {
               etname?.error= "Enter your name"
-          }else if (etcollegeinfo?.text.isNullOrEmpty())
+          }else if (etper?.text.isNullOrEmpty())
           {
-              etcollegeinfo?.error = "Enter about  your college"
+              etper?.error = "Enter about  your percentage"
           }else if (etphone?.text.isNullOrEmpty())
           {
               etphone?.error = "Enter your phone number"
@@ -38,9 +40,14 @@ class MainActivity : AppCompatActivity() {
           }
       }
         btnnext?.setOnClickListener {
-            var intent = Intent(this , CheckboxRadioActivity::class.java)
+            var intent = Intent(this , CheckIntent::class.java)
+            intent.putExtra("name",etname ?.text.toString())
+            intent.putExtra("percent",etper?.text.toString().toFloat())
+            intent.putExtra("phone",etphone?.text.toString())
+            intent.putExtra("marks",etmar?.text.toString().toDouble())
+
             startActivity(intent)
-            finish()
+
         }
 
     }

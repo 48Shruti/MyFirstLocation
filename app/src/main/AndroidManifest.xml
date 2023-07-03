@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Myfirstproject"
         tools:targetApi="31">
         <activity
+            android:name=".CheckIntent"
+            android:exported="false" />
+        <activity
             android:name=".CheckboxRadioActivity"
             android:exported="false" />
         <activity
