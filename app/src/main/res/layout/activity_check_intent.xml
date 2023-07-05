@@ -9,30 +9,13 @@
     <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text=" name"
+    android:text="To get register , first you click on confirm at email "
     android:textSize="20sp"
-    android:layout_marginTop="20dp"
-    android:layout_marginLeft="10dp"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="name"
-        android:id="@+id/tvname"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="percent"
-        android:id="@+id/tvper"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="marks"
-        android:id="@+id/tvmar"/>
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="phone number"
-        android:id="@+id/tvphn"/>
+    android:layout_marginTop="80dp"
+    android:layout_marginLeft="10dp"
+      android:id="@+id/tvemail"
+        />
+
 
 
 

@@ -2,39 +2,30 @@ package com.shruti.myfirstproject
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.EditText
 import android.widget.TextView
 
 class CheckIntent : AppCompatActivity() {
-    var email = ""
-    var percent =0f
+    var name = ""
     var marks = 0.0
+    var per = 0f
     var phone = ""
-    var tvname :TextView ?= null
-    var tvper :TextView ?= null
-    var tvmar :TextView ?= null
-    var tvphn :TextView ?= null
+    var email = ""
+    var tvemail : TextView ?= null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_check_intent)
-
         intent?.let {
-            email = it.getStringExtra("name") ?: ""
-            percent = it.getFloatExtra("percent", 0f)
-            marks = it.getDoubleExtra("marks",0.0)
-            phone = it.getStringExtra("phone") ?: ""
+            name = intent.getStringExtra("name")?:""
+            per = intent.getFloatExtra("per",0f)
+            marks =intent.getDoubleExtra("marks",0.0)
+            phone= intent.getStringExtra("phone")?:""
+           email= intent.getStringExtra("email")?:""
         }
-        tvname = findViewById(R.id.tvname )
-        tvname?.setText(email)
-        tvper = findViewById(R.id.tvper )
-        tvper?.setText(percent.toString())
-        tvmar = findViewById(R.id.tvmar )
-        tvmar?.setText(marks.toString())
-        tvphn = findViewById(R.id.tvphn )
-        tvphn?.setText(phone)
-        System.out.println("email $email")
-        System.out.println("percent $percent")
-        System.out.println("phone $phone")
-        System.out.println("marks $marks")
+
+        tvemail = findViewById(R.id.tvemail)
+        tvemail?.setText(tvemail?.text.toString().plus( email))
+
 
     }
 }

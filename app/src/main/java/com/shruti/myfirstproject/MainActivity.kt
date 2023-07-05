@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity() {
     var etname : EditText?= null
     var etper : EditText ?= null
     var etmar : EditText ?= null
+    var etemail : EditText ?= null
     var etphone : EditText ?= null
     var btnvalidate : Button ?= null
     var btnnext : Button ?= null
@@ -21,9 +22,10 @@ class MainActivity : AppCompatActivity() {
         etper = findViewById(R.id.etper)
         etmar = findViewById(R.id.etmar)
         etphone = findViewById(R.id.etphone)
+        etemail = findViewById(R.id.etemail)
         btnvalidate = findViewById(R.id.btnvalidate)
         btnnext = findViewById(R.id.btnnext)
-      btnvalidate?.setOnClickListener {
+      btnnext?.setOnClickListener {
           if (etname?.text.isNullOrEmpty())
           {
               etname?.error= "Enter your name"
@@ -33,23 +35,25 @@ class MainActivity : AppCompatActivity() {
           }else if (etphone?.text.isNullOrEmpty())
           {
               etphone?.error = "Enter your phone number"
-          }else if(etphone?.text.toString().length<10){
+          } else if(etmar ?. text.isNullOrEmpty())
+          {
+              etmar?.error = "Enter your marks"
+          }else if (etemail?.text.isNullOrEmpty()){
+              etemail?.error = "Enter your email "
+          } else if(etphone?.text.toString().length<10){
               etphone?.error = "Enter a validate number"
           }else{
               Toast.makeText(this, "Successful", Toast.LENGTH_SHORT).show()
+              var intent = Intent(this,CheckIntent::class.java)
+              intent.putExtra("Name",etname?.text.toString() )
+              intent.putExtra("per", etper?.text.toString().toDouble())
+              intent.putExtra("marks", etmar?.text.toString().toFloat())
+              intent.putExtra("phone", etphone?.text.toString())
+              intent.putExtra("email",etemail?.text.toString())
+
+              startActivity(intent)
+
           }
       }
-        btnnext?.setOnClickListener {
-            var intent = Intent(this , CheckIntent::class.java)
-            intent.putExtra("name",etname ?.text.toString())
-            intent.putExtra("percent",etper?.text.toString().toFloat())
-            intent.putExtra("phone",etphone?.text.toString())
-            intent.putExtra("marks",etmar?.text.toString().toDouble())
-
-            startActivity(intent)
-
-        }
-
     }
-
 }
